@@ -7,25 +7,17 @@ ReactDOM.render(<App />, document.getElementById('app')); */
 import React from 'react';
 import { App } from './App'
 import { createRoot } from 'react-dom/client';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 const container = document.getElementById('app');
 const root = createRoot(container);
-import ApolloClient from 'apollo-boost';
-import { ApolloProvider } from 'react-apollo'; 
-root.render(<App />);
-import {
-    ApolloClient,
-    InMemoryCache,
-    ApolloProvider
-  } from '@apollo/client'
 
-  const client = new ApolloClient({
-    uri: 'https://curso-platzi-react-avanzado-git-master-mszjar.vercel.app/',
+const client = new ApolloClient({
+    uri: 'https://petgram-server-mszjar-qury9j4md-mszjar.vercel.app/graphql',
     cache: new InMemoryCache()
-  })
+});
 
-  root.render(
+root.render(
     <ApolloProvider client={client}>
       <App />
-    </ApolloProvider>,
-    document.getElementById('app')
-  )
+    </ApolloProvider>
+);
