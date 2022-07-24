@@ -44,7 +44,7 @@ export const ListOfCategories = () => {
                     ? <Item key='loading'>
                         <div> <AiOutlineLoading3Quarters /> </div>
                     </Item>
-                    : db.categories.map(category => <Item key={category.id}><Category {...category}/></Item>)
+                    : db.categories.map(category => <Item key={category.id}><Category {...category} path={`/pet/${category.id}`} /></Item>)
             }
         </List>
     )
