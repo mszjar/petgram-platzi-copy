@@ -3,22 +3,14 @@ import { ListOfCategories } from "../components/ListOfCategories";
 import { ListOfPhotoCards } from "../components/ListOfPhotoCards";
 import { useParams } from 'react-router';
 
-export const Home = ({ id }) => {
+export const Home = ({ categoryId }) => {
     const params = useParams()
     return (
         <Fragment>
             <ListOfCategories />
-            <ListOfPhotoCards categoryId={params.id} />
+            <ListOfPhotoCards categoryId={params.categoryId} />
         </Fragment>
     )
 }
 
-/* export const Home = () => {
-      const params = useParams()
-      return (
-        <Fragment>
-          <ListOfCategories />
-          <ListOfPhotoCards categoryId={params.id} />
-        </Fragment>
-      )
-    } */
+ 
