@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
+import { useInputValue } from "../../hooks/useInputValue";
+import { Form, Input, Button } from '../UserForm/styles';
 
-const useInputValue = initialValue => {
-    const [value, setValue] = useState(initialValue)
-    const onChange = e => setValue(e.target.valye)
-
-    return { value, onChange }
-}
-
-export const UserForm = ({ onSubmit }) => {
+export const UserForm = ({ onSubmit, title }) => {
     const email = useInputValue('')
     const password = useInputValue('')
 
-    return <form onSubmit={onSubmit}>
-        <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
-        <input placeholder="Password" type= 'password' value={password} onChange={e => setPassword(e.target.value)} />
-        <button>Iniciar Sesión</button>
-    </form>
+    return (
+        < Fragment >
+            <h2>{title}</h2>
+            <Form onSubmit={onSubmit}>
+                <Input placeholder="Email" value={email.value} onChange={email.onChange} />
+                <Input placeholder="Password" type= 'password' value={password.value} onChange={password.onChange} />
+                <Button>{title}</Button>
+            </Form>
+        </Fragment>
+    )
 }
