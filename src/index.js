@@ -1,13 +1,9 @@
-/* import React from 'react';
-import ReactDOM from 'react-dom';
-import { App } from './App'
-
-ReactDOM.render(<App />, document.getElementById('app')); */
-
 import React from 'react';
 import { App } from './App'
 import { createRoot } from 'react-dom/client';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import Context from './Context';
+
 const container = document.getElementById('app');
 const root = createRoot(container);
 
@@ -17,7 +13,9 @@ const client = new ApolloClient({
 });
 
 root.render(
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
+    <Context.Provider>
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
+    </Context.Provider>
 );

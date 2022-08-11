@@ -34,10 +34,11 @@ export const Link = styled(NavLink)`
         
         &:after {
             ${fadeIn({ time:'0.5s' })};
+            position: 'absolute';
             content: '·';
             bottom: 0;
             font-size: 34px;
-            line-height: 0;
+            line-height: 20px;
         }
     }
 
