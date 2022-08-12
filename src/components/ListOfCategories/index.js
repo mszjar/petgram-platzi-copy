@@ -3,7 +3,7 @@ import { Category } from "../Category";
 import { List, Item } from "./styles";
 import { categories } from '../../../api/db.json';
 import db from '../../../api/db.json'
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import { Spinner } from '../../styles/animation';
 
 
 function useCategoriesData() {
@@ -42,7 +42,7 @@ export const ListOfCategories = () => {
             {
                 loading
                     ? <Item key='loading'>
-                        <div> <AiOutlineLoading3Quarters /> </div>
+                        <Spinner />
                     </Item>
                     : db.categories.map(category => <Item key={category.id}><Category {...category} path={`/pet/${category.id}`} /></Item>)
             }

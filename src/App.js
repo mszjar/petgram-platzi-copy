@@ -11,10 +11,6 @@ import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
 import Context from "./Context";
 
 
-const UserLogged = ({ children }) => {
-    return children({ isAuth: false })
-}
-
 export const App = () => {
     return (
         <div>
