@@ -1,10 +1,10 @@
 import React from 'react';
-import { Mutation } from '@apollo/client/react/components';
 import { gql, useMutation } from '@apollo/client';
+import { Mutation } from '@apollo/client/react/components';
 
 const REGISTER = gql`
     mutation signup($input: UserCredentials!) {
-        signup (input: $input)
+        signup(input: $input)
     }
 `
 
