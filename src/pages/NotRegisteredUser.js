@@ -13,7 +13,7 @@ export const NotRegisteredUser = () => {
                     const onSubmit = ( { email, password }) => {
                         const input = { email, password }
                         const variables = { input }
-                        register({ variables }).then(({data}) => {
+                        register({ variables }).then(({ data }) => {
                             const { signup } = data
                             activateAuth(signup)
                         })
@@ -32,7 +32,7 @@ export const NotRegisteredUser = () => {
                     const onSubmit = ( { email, password }) => {
                         const input = { email, password }
                         const variables = { input }
-                        login({ variables }).then(({data}) => {
+                        login({ variables }).then(({ data }) => {
                             const { login } = data
                             activateAuth(login)
                         })
