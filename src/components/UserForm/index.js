@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { useInputValue } from "../../hooks/useInputValue";
-import { Error, Form, Input, Button, Title } from '../UserForm/styles';
+import { Error, Form, Input, Title } from '../UserForm/styles';
+import { SubmitButton } from "../SubmitButton";
 import { Spinner } from "../../styles/animation";
 
 export const UserForm = ({ error, disabled, onSubmit, title }) => {
@@ -21,7 +22,7 @@ export const UserForm = ({ error, disabled, onSubmit, title }) => {
                 <Title>{title}</Title>
                 <Input disabled={disabled} placeholder="Email" value={email.value} onChange={email.onChange} />
                 <Input disabled={disabled} placeholder="Password" type= 'password' value={password.value} onChange={password.onChange} />
-                <Button disabled={disabled}>{title}</Button>
+                <SubmitButton disabled={disabled}>{title}</SubmitButton>
                 {
                     disabled
                         ? <Spinner />
